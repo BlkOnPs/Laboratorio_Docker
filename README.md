@@ -179,7 +179,7 @@ git clone <URL_DEL_REPOSITORY>
 Entrare nella cartella del progetto:
 
 ```bash
-cd ProgettoDocker
+cd ProgettoDocker/ProgettoDocker
 ```
 
 Sostituire `<URL_DEL_REPOSITORY>` con il link HTTPS del repository GitHub.
