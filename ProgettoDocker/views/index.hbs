@@ -1,0 +1,33 @@
+<div class="page-head">
+  <div>
+    <h1>{{title}}</h1>
+    <p class="muted">Gestisci le persone e i loro ruoli.</p>
+  </div>
+</div>
+
+{{#if users.length}}
+<section class="grid">
+  {{#each users}}
+  <article class="card">
+    <div class="avatar">{{this.name}}</div>
+    <h2 class="card-title">{{this.name}} {{this.surname}}</h2>
+    <span class="badge badge-yes"><i class="bi bi-briefcase-fill"></i>{{this.role.name}}</span>
+    <div class="card-actions">
+      <a href="/show/{{this.id}}" class="btn btn-soft" title="Dettaglio"><i class="bi bi-eye"></i> Vedi</a>
+      <a href="/edit/{{this.id}}" class="btn btn-soft" title="Modifica"><i class="bi bi-pencil"></i></a>
+      <form method="POST" action="/delete/{{this.id}}"
+        onsubmit="return confirm('Vuoi eliminare {{this.name}} {{this.surname}}? L\'azione non si può annullare.');">
+        <button type="submit" class="btn btn-danger-soft" title="Elimina"><i class="bi bi-trash3"></i></button>
+      </form>
+    </div>
+  </article>
+  {{/each}}
+</section>
+{{else}}
+<div class="empty">
+  <i class="bi bi-person-plus"></i>
+  <h2>Nessun utente</h2>
+  <p class="muted">Aggiungi il primo utente per iniziare.</p>
+  <a href="/create" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Crea utente</a>
+</div>
+{{/if}}

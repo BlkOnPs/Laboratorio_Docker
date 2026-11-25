@@ -1,0 +1,103 @@
+<a href="/" class="back">
+  <i class="bi bi-arrow-left"></i>
+  Torna alla lista
+</a>
+
+<section class="panel">
+
+  <h1>{{title}}</h1>
+  <p class="muted">
+    Inserisci i dati del nuovo utente.
+  </p>
+
+  <form method="POST" action="/store" class="form">
+
+    <div class="field">
+      <label for="name">Nome</label>
+
+      <input type="text" id="name" name="name" value="{{user.name}}" class="{{#if errors.name}}input-error{{/if}}"
+        required>
+
+      {{#if errors.name}}
+      <small class="field-error">{{errors.name}}</small>
+      {{/if}}
+    </div>
+
+    <div class="field">
+      <label for="surname">Cognome</label>
+
+      <input type="text" id="surname" name="surname" value="{{user.surname}}"
+        class="{{#if errors.surname}}input-error{{/if}}" required>
+
+      {{#if errors.surname}}
+      <small class="field-error">{{errors.surname}}</small>
+      {{/if}}
+    </div>
+
+    <div class="field">
+      <label for="address">Indirizzo</label>
+
+      <input type="text" id="address" name="address" value="{{user.address}}"
+        class="{{#if errors.address}}input-error{{/if}}" required>
+
+      {{#if errors.address}}
+      <small class="field-error">{{errors.address}}</small>
+      {{/if}}
+    </div>
+
+    <div class="field">
+      <label for="city">Città</label>
+
+      <input type="text" id="city" name="city" value="{{user.city}}" class="{{#if errors.city}}input-error{{/if}}"
+        required>
+
+      {{#if errors.city}}
+      <small class="field-error">{{errors.city}}</small>
+      {{/if}}
+    </div>
+
+    <div class="field">
+      <label for="phone_number">Numero telefonico</label>
+
+      <input type="text" id="phone_number" name="phone_number" value="{{user.phone_number}}"
+        class="{{#if errors.phone_number}}input-error{{/if}}" required>
+
+      {{#if errors.phone_number}}
+      <small class="field-error">{{errors.phone_number}}</small>
+      {{/if}}
+    </div>
+
+    <div class="field">
+      <label for="role_id">Ruolo</label>
+
+      <select id="role_id" name="role_id" class="{{#if errors.role_id}}input-error{{/if}}" required>
+
+        <option value="">-- Seleziona un ruolo --</option>
+
+        {{#each roles}}
+        <option value="{{id}}" {{#if selected}}selected{{/if}}>
+          {{name}}
+        </option>
+        {{/each}}
+
+      </select>
+
+      {{#if errors.role_id}}
+      <small class="field-error">{{errors.role_id}}</small>
+      {{/if}}
+    </div>
+
+    <div class="form-actions full">
+      <button class="btn btn-primary" type="submit">
+        <i class="bi bi-check-lg"></i>
+        Crea utente
+      </button>
+
+      <a href="/" class="btn btn-soft">
+        Annulla
+      </a>
+    </div>
+
+  </form>
+
+</section>
