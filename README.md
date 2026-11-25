@@ -188,7 +188,7 @@ Sostituire `<URL_DEL_REPOSITORY>` con il link HTTPS del repository GitHub.
 
 Nella cartella principale del progetto creare un file chiamato `.env`.
 
-Inserire le seguenti variabili:
+Inserire le seguenti variabili (oppure copiare e incollare il file template consegnato chiamato **.env.example**):
 
 ```env
 # Porta dell'applicazione sul computer host
